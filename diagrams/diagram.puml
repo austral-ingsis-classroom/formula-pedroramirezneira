@@ -1,0 +1,97 @@
+plantuml
+@startuml
+
+interface edu.austral.ingsis.math.functions.IFunction {
+    + evaluate(args: String?= null): Number
+}
+
+class edu.austral.ingsis.math.functions.Function {
+    - child: IArgument
+    + evaluate(args: String?): Number
+    + toString(): String
+}
+
+interface edu.austral.ingsis.math.arguments.IArgument {
+    + getValue(args: String?): Double
+}
+
+class edu.austral.ingsis.math.arguments.Variable {
+    - name: String
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.Constant {
+    - value: Number
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.operations.AbsoluteValue {
+    - value: IArgument
+    + getValue(args: String?): Double
+    + toString():String
+}
+
+class edu.austral.ingsis.math.arguments.operations.Addition {
+    - a: IArgument
+    - b: IArgument
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.operations.Division {
+    - a: IArgument
+    - b: IArgument
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.operations.Exponentiation {
+    - a: IArgument
+    - b: IArgument
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.operations.Multiplication {
+    - a: IArgument
+    - b: IArgument
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.operations.Roots {
+    - value: IArgument
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+class edu.austral.ingsis.math.arguments.operations.Subtraction {
+    - a: IArgument
+    - b: IArgument
+    + getValue(args: String?): Double
+    + toString(): String
+}
+
+edu.austral.ingsis.math.functions.Function --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.functions.IFunction <|.. edu.austral.ingsis.math.functions.Function
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.Variable
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.Constant
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.AbsoluteValue
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.Addition
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.Division
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.Exponentiation
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.Multiplication
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.Roots
+edu.austral.ingsis.math.arguments.IArgument <|.. edu.austral.ingsis.math.arguments.operations.Subtraction
+
+edu.austral.ingsis.math.arguments.operations.AbsoluteValue --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.arguments.operations.Addition --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.arguments.operations.Division --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.arguments.operations.Exponentiation --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.arguments.operations.Multiplication --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.arguments.operations.Roots --> edu.austral.ingsis.math.arguments.IArgument
+edu.austral.ingsis.math.arguments.operations.Subtraction --> edu.austral.ingsis.math.arguments.IArgument
+
+@enduml
