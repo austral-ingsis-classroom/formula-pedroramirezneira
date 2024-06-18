@@ -7,7 +7,7 @@ import edu.austral.ingsis.math.arguments.operations.Subtraction
 fun main() {
     val function = Function(
         Addition(
-            Constant(1.toDouble()),
+            Constant(1),
             Subtraction(
                 Variable("x"),
                 Variable("y")
