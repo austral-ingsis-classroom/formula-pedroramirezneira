@@ -9,7 +9,8 @@ fun main() {
         Addition(
             Constant(1.toDouble()),
             Subtraction(
-                Variable("x"), Variable("y")
+                Variable("x"),
+                Variable("y")
             )
         )
     )
